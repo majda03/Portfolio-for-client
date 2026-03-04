@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Iris Design Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Outfit',sans-serif;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+line-height:1.6;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
+}
+
+nav h2{
+letter-spacing:2px;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+opacity:.8;
+}
+
+nav a:hover{
+opacity:1;
+}
+
+.hero{
+padding:120px 0;
+text-align:center;
+}
+
+.hero h1{
+font-size:56px;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:600px;
+margin:auto;
+opacity:.7;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:14px 28px;
+background:white;
+color:black;
+text-decoration:none;
+border-radius:40px;
+font-weight:bold;
+}
+
+.section-title{
+font-size:32px;
+margin-bottom:50px;
+text-align:center;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
+}
+
+.project{
+background:#1b1b1b;
+border-radius:12px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.project:hover{
+transform:translateY(-5px);
+}
+
+.project img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.project-content{
+padding:25px;
+}
+
+.project h3{
+margin-bottom:10px;
+}
+
+.project p{
+opacity:.7;
+font-size:14px;
+}
+
+.project a{
+display:inline-block;
+margin-top:15px;
+text-decoration:none;
+color:white;
+font-size:14px;
+border-bottom:1px solid white;
+cursor:pointer;
+}
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+margin-top:100px;
+}
+
+.about img{
+width:100%;
+max-width:420px;
+height:520px;
+object-fit:cover;
+border-radius:14px;
+margin-left:auto;
+}
+
+.contact{
+text-align:center;
+margin-top:100px;
+}
+
+footer{
+text-align:center;
+margin-top:80px;
+opacity:.5;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+.about img{
+margin:auto;
+height:380px;
+}
+
+}
+
+/* GALLERY */
+
+#galleryModal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.gallery-content{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+#galleryImage{
+max-width:80vw;
+max-height:80vh;
+border-radius:10px;
+}
+
+#prev,
+#next{
+background:none;
+border:none;
+color:white;
+font-size:50px;
+cursor:pointer;
+}
+
+#closeGallery{
+position:absolute;
+top:40px;
+right:40px;
+font-size:30px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<nav>
+
+<h2>IRIS</h2>
+
+<ul>
+<li><a href="#work">Work</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<h1>Graphic Designer & Brand Identity</h1>
+
+<p>
+Creating powerful visual identities, branding systems and
+creative digital design for modern brands.
+</p>
+
+<a href="#work" class="btn">View My Work</a>
+
+</section>
+
+<section id="work">
+
+<h2 class="section-title">Selected Work</h2>
+
+<div class="projects">
+
+<div class="project">
+
+<img src="1111.png">
+
+<div class="project-content">
+
+<h3>Branding Studio Website</h3>
+
+<p>
+Strategic branding website showcasing logo design,
+visual identity and packaging concepts.
+</p>
+
+<a href="https://majda03.github.io/graphic-designer-portfolio/" target="_blank">
+View Project
+</a>
+
+</div>
+
+</div>
+
+<div class="project">
+
+<img src="111.png">
+
+<div class="project-content">
+
+<h3>Graphic Design Portfolio</h3>
+
+<p>
+Creative graphic design portfolio featuring branding,
+print design and social media visuals.
+</p>
+
+<a href="https://majda03.github.io/branding-microsite/" target="_blank">
+View Project
+</a>
+
+</div>
+
+</div>
+
+<div class="project">
+
+<img src="11111.jpeg">
+
+<div class="project-content">
+
+<h3>Creative Campaign Visuals</h3>
+
+<p>
+Visual direction and design system for digital campaigns
+and social media promotion.
+</p>
+
+<a id="openGallery">
+View Project
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="about">
+
+<div>
+
+<h2>About Iris</h2>
+
+<p>
+Iris is a creative graphic designer focused on building
+memorable brand identities and visually striking digital
+designs.
+</p>
+
+<p>
+Her work combines strategy, aesthetics and storytelling
+to help brands stand out in modern digital spaces.
+</p>
+
+</div>
+
+<img src="11.jpeg">
+
+</section>
+
+<section id="contact" class="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<p>Email: mesanoviciris@.com</p>
+
+<a href="mailto:mesanoviciris@gmail.com" class="btn">
+Send Message
+</a>
+
+</section>
+
+<footer>
+
+<p>©️ 2025 Iris Design</p>
+
+</footer>
+
+</div>
+
+
+<!-- GALLERY -->
+
+<div id="galleryModal">
+
+<span id="closeGallery">✕</span>
+
+<div class="gallery-content">
+
+<button id="prev">‹</button>
+
+<img id="galleryImage" src="m.jpeg">
+
+<button id="next">›</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+const openGallery = document.getElementById("openGallery")
+const modal = document.getElementById("galleryModal")
+const closeGallery = document.getElementById("closeGallery")
+
+const images = ["m.jpeg","f.jpeg","i.jpeg","a.jpeg"]
+
+let index = 0
+
+const galleryImage = document.getElementById("galleryImage")
+
+openGallery.onclick = (e)=>{
+e.preventDefault()
+modal.style.display="flex"
+galleryImage.src = images[index]
+}
+
+closeGallery.onclick = ()=>{
+modal.style.display="none"
+}
+
+document.getElementById("next").onclick = ()=>{
+index++
+if(index >= images.length){index = 0}
+galleryImage.src = images[index]
+}
+
+document.getElementById("prev").onclick = ()=>{
+index--
+if(index < 0){index = images.length - 1}
+galleryImage.src = images[index]
+}
+
+</script>
+
+</body>
+</html>
